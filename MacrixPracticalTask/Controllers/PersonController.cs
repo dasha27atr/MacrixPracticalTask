@@ -2,7 +2,6 @@
 using MacrixPracticalTask.Logger.ILog;
 using MacrixPracticalTask.Models;
 using MacrixPracticalTask.Models.DTO;
-using MacrixPracticalTask.Models.DTO.Extensions;
 using MacrixPracticalTask.Models.Paging;
 using MacrixPracticalTask.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +32,7 @@ namespace MacrixPracticalTask.Controllers
 
                 _logger.LogInfo($"GetAll() - Returned {people.Count} ids from database: {string.Join(", ", people.Select(x => x.Id).ToArray())}");
 
-                var peopleResult = _mapper.Map<IEnumerable<PersonDTO>>(people).CalculateAge();
+                var peopleResult = _mapper.Map<IEnumerable<PersonDTO>>(people);
 
                 return Ok(peopleResult);
             }
@@ -60,7 +59,7 @@ namespace MacrixPracticalTask.Controllers
                 {
                     _logger.LogInfo($"GetPersonById() - Returned person with id: {personId}");
 
-                    var personResult = _mapper.Map<PersonDTO>(person).CalculateAge();
+                    var personResult = _mapper.Map<PersonDTO>(person);
 
                     return Ok(personResult);
                 }
@@ -94,7 +93,7 @@ namespace MacrixPracticalTask.Controllers
                 _unitOfWork.Person.CreatePerson(personEntity);
                 _unitOfWork.Save();
 
-                var createdPerson = _mapper.Map<PersonDTO>(personEntity).CalculateAge();
+                var createdPerson = _mapper.Map<PersonDTO>(personEntity);
 
                 return CreatedAtRoute("PersonById", new { PersonId = createdPerson.Id }, createdPerson);
             }

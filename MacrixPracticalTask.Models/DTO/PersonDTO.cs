@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MacrixPracticalTask.Models.DTO
 {
@@ -14,6 +15,21 @@ namespace MacrixPracticalTask.Models.DTO
         public string Town { get; set; }
         public string PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int Age { get; set; }
+        public int Age
+        {
+            get
+            {
+                var Today = DateTime.Today;
+
+                var personAge = Today.Year - DateOfBirth.Year;
+
+                if (DateOfBirth.Date > Today.AddYears(-personAge))
+                {
+                    personAge--;
+                }
+
+                return personAge;
+            }
+        }
     }
 }
