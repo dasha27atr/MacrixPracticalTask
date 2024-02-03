@@ -1,4 +1,5 @@
 ﻿using MacrixPracticalTask.Models;
+using MacrixPracticalTask.Models.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace MacrixPracticalTask.Context
@@ -6,6 +7,7 @@ namespace MacrixPracticalTask.Context
     public class ApplicationDbContext : DbContext
     {
         public DbSet<Person> People => Set<Person>();
+        public DbSet<Log> Logs => Set<Log>();
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

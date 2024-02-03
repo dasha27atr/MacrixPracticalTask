@@ -1,7 +1,7 @@
 using MacrixPracticalTask.Config;
 using MacrixPracticalTask.Context;
-using MacrixPracticalTask.Logger.ILog;
 using MacrixPracticalTask.Logger;
+using MacrixPracticalTask.Logger.ILog;
 using MacrixPracticalTask.Repository;
 using MacrixPracticalTask.Repository.IRepository;
 using Microsoft.Data.Sqlite;

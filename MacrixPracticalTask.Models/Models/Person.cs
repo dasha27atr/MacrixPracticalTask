@@ -39,9 +39,5 @@ namespace MacrixPracticalTask.Models
 
         [Required]
         public DateTime DateOfBirth { get; set; }
-
-        //[Required]
-        //[Range(1, 150)]
-        //public int Age { get; set; }
     }
 }
