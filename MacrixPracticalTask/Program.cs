@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog;
+using System.Net;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -65,13 +66,13 @@ static void configureServices(IServiceCollection services, ConfigurationManager 
 
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     services.AddEndpointsApiExplorer();
+
+    ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
 }
 
 static void configureApp(WebApplication app)
 {
     app.UseHttpsRedirection();
-
-    app.UseAuthorization();
 
     app.MapControllers();
 

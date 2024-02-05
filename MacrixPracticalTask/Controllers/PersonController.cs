@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MacrixPracticalTask.Controllers
 {
     [ApiController]
-    [Route("api/[action]")]
+    [Route("[controller]/[action]")]
     public class PersonController : ControllerBase
     {
         private ILoggerManager _logger;
