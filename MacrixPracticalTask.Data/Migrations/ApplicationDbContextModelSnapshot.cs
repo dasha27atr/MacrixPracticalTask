@@ -46,7 +46,7 @@ namespace MacrixPracticalTask.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ApartmentNumber")
+                    b.Property<int?>("ApartmentNumber")
                         .HasMaxLength(1000)
                         .HasColumnType("INTEGER");
 

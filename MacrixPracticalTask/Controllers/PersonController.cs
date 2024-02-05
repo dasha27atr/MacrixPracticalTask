@@ -52,8 +52,10 @@ namespace MacrixPracticalTask.Controllers
 
                 if (person == null)
                 {
-                    _logger.LogError($"GetPersonById() - Unable to find person with id {personId} in database.");
-                    return NotFound();
+                    var errorMessage = $"GetPersonById() - Unable to find person with id = {personId} in database.";
+
+                    _logger.LogError(errorMessage);
+                    return NotFound(errorMessage);
                 }
                 else
                 {
@@ -124,8 +126,10 @@ namespace MacrixPracticalTask.Controllers
                 var personEntity = _unitOfWork.Person.GetPersonById(personId);
                 if (personEntity == null)
                 {
-                    _logger.LogError($"UpdatePerson() - Unable to find person with id {personId} in database.");
-                    return NotFound();
+                    var errorMessage = $"UpdatePerson() - Unable to find person with id = {personId} in database.";
+
+                    _logger.LogError(errorMessage);
+                    return NotFound(errorMessage);
                 }
 
                 _mapper.Map(person, personEntity);
@@ -150,8 +154,10 @@ namespace MacrixPracticalTask.Controllers
                 var person = _unitOfWork.Person.GetPersonById(personId);
                 if (person == null)
                 {
-                    _logger.LogError($"DeletePerson() - Unable to find person with id {personId} in database.");
-                    return NotFound();
+                    var errorMessage = $"DeletePerson() - Unable to find person with id = {personId} in database.";
+
+                    _logger.LogError(errorMessage);
+                    return NotFound(errorMessage);
                 }
 
                 _unitOfWork.Person.DeletePerson(person);

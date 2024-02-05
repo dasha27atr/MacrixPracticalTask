@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace MacrixPracticalTask.Models.DTO
+﻿namespace MacrixPracticalTask.Models.DTO
 {
     public class PersonDTO
     {

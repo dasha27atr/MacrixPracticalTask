@@ -4,10 +4,13 @@ using MacrixPracticalTask.Logger;
 using MacrixPracticalTask.Logger.ILog;
 using MacrixPracticalTask.Repository;
 using MacrixPracticalTask.Repository.IRepository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
