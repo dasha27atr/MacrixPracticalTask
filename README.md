@@ -1,4 +1,4 @@
-This project is a REST API server developed as a practical task for the Macrix company.
+This project is a REST API server developed as a part of a practical task for the Macrix company.
 
 Installation instructions:
 1) Find MacrixPracticalTask.zip file in the Releases folder of the current repository (https://github.com/dasha27atr/MacrixPracticalTask/releases/tag/1.0.0) and download it to your local machine.
